@@ -11,12 +11,6 @@
         var vm = this;
         vm.follow = follow;
 
-        function follow(path) {
-            BrowsingService.getFileSystemModel(path).success(function (response) {
-                vm.model = response;
-            });
-        }
-
         activate();
 
         function activate() {
@@ -24,5 +18,12 @@
                 vm.model = response;
             });
         }
+
+        function follow(path) {
+            BrowsingService.getFileSystemModel(path).success(function (response) {
+                vm.model = response;
+            });
+        }
+
     }
 })();

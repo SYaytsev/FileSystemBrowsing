@@ -10,6 +10,7 @@
     function BrowsingService($http) {
         this.getFileSystemModel = getFileSystemModel;
 
+
         function getFileSystemModel(path) {
             return $http({
                 method: 'GET',

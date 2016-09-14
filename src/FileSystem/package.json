@@ -1,9 +1,9 @@
 {
-  "version": "1.0.0",
-  "name": "asp.net",
-  "private": true,
-  "devDependencies": {},
   "dependencies": {
     "bower": "^1.7.9"
-  }
+  },
+  "devDependencies": {},
+  "name": "asp.net",
+  "private": true,
+  "version": "1.0.0"
 }

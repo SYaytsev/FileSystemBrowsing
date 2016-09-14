@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using FileSystem.Repository;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using FileSystem.Repository;
 using Newtonsoft.Json.Serialization;
 
 namespace FileSystem
@@ -23,11 +16,8 @@ namespace FileSystem
         public void Configure(IApplicationBuilder app)
         {
             app.UseDefaultFiles();
-
             app.UseStaticFiles();
-
             app.UseMvc();
-
         }
     }
 }
