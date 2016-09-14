@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>File System Browsing</title>
+    <link rel = "stylesheet" type="text/css" href = "styles/site.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div ng-controller="BrowsingController as vm">
+        <div class="content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Less 10Mb</th>
+                        <th>10Mb-50Mb</th>
+                        <th>More 100Mb</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="text-align:center;">
+                        <td>{{vm.model.filesCount.minSizeFilesCount}}</td>
+                        <td>{{vm.model.filesCount.middleSizeFilesCount}}</td>
+                        <td>{{vm.model.filesCount.maxSizeFilesCount}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+            <div class="content" style="margin-top: 50px;">
+                <div>
+                    <span style="font-weight:bold;">Current path:</span> <span>{{vm.model.currentDir.fullName}}</span>
+                </div>
+                <ul >
+                    <li>
+                        <a href="" ng-click="vm.follow(vm.model.parentDir.fullName)">...</a>
+                    </li>
+                    <li ng-repeat="dir in vm.model.dirs">
+                        <i class="fa fa-folder-o"></i>
+                        <a href="" ng-click="vm.follow(dir.fullName)">{{dir.name}}</a>
+                    </li>
+                    <li ng-repeat="file in vm.model.files">
+                        <i class="fa fa-file-o"></i>
+                        <a href="">{{file.name}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/browsing.controller.js"></script>
+    <script src="app/browsing.service.js"></script>
+</body>
+</html>
